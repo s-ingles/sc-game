@@ -20,7 +20,7 @@
     "author": "Sam Ingles",
     "windowWidth": 500,
     "windowHeight": 900,
-    "latestCompilationDirectory": "",
+    "latestCompilationDirectory": "C:\\Users\\sjing_gi9g8av\\Documents\\GitHub\\sc-game\\game",
     "maxFPS": 60,
     "minFPS": 20,
     "verticalSync": false,
@@ -991,7 +991,7 @@
           "persistentUuid": "523cb7d5-5553-4760-8bca-ac25768cff0c",
           "width": 0,
           "x": 16,
-          "y": 695,
+          "y": 734,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -1007,24 +1007,8 @@
           "persistentUuid": "86d8e10a-13ee-4c37-a3a0-7ce245ab0373",
           "width": 0,
           "x": 296,
-          "y": 788,
+          "y": 838,
           "zOrder": 5,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "UI",
-          "locked": false,
-          "name": "Kenney",
-          "persistentUuid": "3aafedc9-ea0e-4e02-b73b-c00ef6c39220",
-          "width": 0,
-          "x": 296,
-          "y": 843,
-          "zOrder": 6,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1071,7 +1055,7 @@
           "persistentUuid": "43d50a0b-605b-49b7-ae94-0817d0100188",
           "width": 32,
           "x": 358,
-          "y": 352,
+          "y": 393,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -1087,7 +1071,7 @@
           "persistentUuid": "e258f370-18e8-4824-9cc1-6f1ab84a232d",
           "width": 32,
           "x": 358,
-          "y": 406,
+          "y": 450,
           "zOrder": 10,
           "numberProperties": [],
           "stringProperties": [],
@@ -1103,7 +1087,7 @@
           "persistentUuid": "c2772946-c4d1-4571-9c82-05f3bfa97bc9",
           "width": 0,
           "x": 27,
-          "y": 606,
+          "y": 673,
           "zOrder": 11,
           "numberProperties": [],
           "stringProperties": [],
@@ -1121,6 +1105,22 @@
           "x": 190,
           "y": 15,
           "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "UI",
+          "locked": false,
+          "name": "AmmoUp",
+          "persistentUuid": "724a0583-fcfa-4ba3-b98a-85bc3bec210a",
+          "width": 0,
+          "x": 357,
+          "y": 503,
+          "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1147,7 +1147,7 @@
           "underlined": false,
           "variables": [],
           "behaviors": [],
-          "string": "Developer:                  Sam\n\nMusic:              soundimage.org\n\nGFX:\n\nSFX:",
+          "string": "Developer:                  Sam\n\nMusic:              soundimage.org\n\nGFX/SFX:",
           "font": "assets\\gfx\\Bonus\\kenvector_future.ttf",
           "characterSize": 25,
           "color": {
@@ -1176,7 +1176,7 @@
           }
         },
         {
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "Instructions",
           "smoothed": true,
@@ -1185,7 +1185,7 @@
           "underlined": false,
           "variables": [],
           "behaviors": [],
-          "string": "Movement:            Up, Down, \n                                          Left, Right\n\nFire:                             SpaceBar\n\nHealth Up:\n\nBonus Points:\n\nToggle Sound:               M\n\nToggle Dev:                      D",
+          "string": "Movement:            Up, Down, \n                                          Left, Right\n\nFire:                             SpaceBar\n\nFire Special:                   S\n\nHealth Up:\n\nBonus Points:\n\nSpecial Ammo:\n\nToggle Sound:               M\n\nToggle Dev:                      D",
           "font": "assets\\gfx\\Bonus\\kenvector_future.ttf",
           "characterSize": 25,
           "color": {
@@ -1218,7 +1218,7 @@
           "color": {
             "b": 0,
             "g": 255,
-            "r": 252
+            "r": 0
           }
         },
         {
@@ -1415,6 +1415,85 @@
             "g": 0,
             "r": 255
           }
+        },
+        {
+          "name": "AmmoUp",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "behaviors": [
+            {
+              "name": "DestroyOutside",
+              "type": "DestroyOutsideBehavior::DestroyOutside",
+              "extraBorder": 250
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets\\gfx\\PNG\\Power-ups\\things_bronze.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets\\gfx\\PNG\\Power-ups\\things_silver.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets\\gfx\\PNG\\Power-ups\\things_gold.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         },
         {
           "name": "Bonus",
@@ -2086,7 +2165,7 @@
           "name": "PopScores",
           "objects": [
             {
-              "name": "SplashMAX"
+              "name": "SplashGreen"
             }
           ]
         },
@@ -2175,8 +2254,8 @@
           "name": "Health",
           "persistentUuid": "76f16810-cf88-4db1-962f-72b9d9aed8a8",
           "width": 0,
-          "x": 325,
-          "y": 870,
+          "x": 320,
+          "y": 845,
           "zOrder": 8,
           "numberProperties": [],
           "stringProperties": [],
@@ -2239,8 +2318,8 @@
           "name": "Ammo",
           "persistentUuid": "05e99cc9-4180-4aa6-9d23-5a4673a577d5",
           "width": 0,
-          "x": 325,
-          "y": 845,
+          "x": 316,
+          "y": 870,
           "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
@@ -3593,7 +3672,7 @@
             }
           ],
           "behaviors": [],
-          "string": "Ammo: 0",
+          "string": "(S)pecial: 0",
           "font": "assets\\gfx\\Bonus\\kenvector_future.ttf",
           "characterSize": 20,
           "color": {
@@ -3752,7 +3831,7 @@
         {
           "bold": false,
           "italic": false,
-          "name": "SplashScore",
+          "name": "SplashText",
           "smoothed": true,
           "tags": "",
           "type": "TextObject::Text",
@@ -3771,14 +3850,14 @@
         {
           "bold": true,
           "italic": false,
-          "name": "SplashMAX",
+          "name": "SplashGreen",
           "smoothed": true,
           "tags": "",
           "type": "TextObject::Text",
           "underlined": false,
           "variables": [],
           "behaviors": [],
-          "string": "MAX",
+          "string": "+++",
           "font": "assets\\gfx\\Bonus\\kenvector_future.ttf",
           "characterSize": 20,
           "color": {
@@ -4380,7 +4459,7 @@
                   },
                   "parameters": [
                     "",
-                    "r"
+                    "s"
                   ],
                   "subInstructions": []
                 },
@@ -4473,7 +4552,7 @@
                   "parameters": [
                     "Ammo",
                     "=",
-                    "\"Ammo: \"+VariableString(Ammo)"
+                    "\"(S)pecial: \"+VariableString(Ammo)"
                   ],
                   "subInstructions": []
                 }
@@ -4684,7 +4763,7 @@
                   },
                   "parameters": [
                     "",
-                    "SplashScore",
+                    "SplashText",
                     "Player.X()",
                     "Player.Y()",
                     ""
@@ -4694,10 +4773,21 @@
                 {
                   "type": {
                     "inverted": false,
+                    "value": "TextObject::ChangeColor"
+                  },
+                  "parameters": [
+                    "SplashText",
+                    "\"255;0;0\""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
                     "value": "TextObject::String"
                   },
                   "parameters": [
-                    "SplashScore",
+                    "SplashText",
                     "=",
                     "\"+\"+\"10 000\""
                   ],
@@ -4759,10 +4849,21 @@
                   },
                   "parameters": [
                     "",
-                    "SplashMAX",
+                    "SplashText",
                     "Player.X()",
                     "Player.Y()",
                     ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "TextObject::ChangeColor"
+                  },
+                  "parameters": [
+                    "SplashText",
+                    "\"255;0;0\""
                   ],
                   "subInstructions": []
                 },
@@ -4868,7 +4969,59 @@
                   "parameters": [
                     "Ammo",
                     "=",
-                    "\"Ammo: \"+VariableString(Ammo)"
+                    "\"(S)pecial: \"+VariableString(Ammo)"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "SplashText",
+                    "Player.X()",
+                    "Player.Y()",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "TextObject::ChangeColor"
+                  },
+                  "parameters": [
+                    "SplashText",
+                    "\"255;0;0\""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "SplashText",
+                    "=",
+                    "\"Special+\""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "PlaySoundCanal"
+                  },
+                  "parameters": [
+                    "",
+                    "assets\\gfx\\Bonus\\sfx_shieldUp.ogg",
+                    "2",
+                    "50",
+                    "50",
+                    ""
                   ],
                   "subInstructions": []
                 }
@@ -6604,39 +6757,6 @@
             {
               "type": {
                 "inverted": false,
-                "value": "Health::Health::IsDead"
-              },
-              "parameters": [
-                "AllMeteors",
-                "Health",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "Delete"
-              },
-              "parameters": [
-                "AllMeteors",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
                 "value": "CollisionNP"
               },
               "parameters": [
@@ -6773,24 +6893,13 @@
             {
               "type": {
                 "inverted": false,
-                "value": "Delete"
-              },
-              "parameters": [
-                "AllMeteors",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
                 "value": "Create"
               },
               "parameters": [
                 "",
                 "BasicExplosion",
-                "AllMeteors.X()",
-                "AllMeteors.Y()",
+                "Bomb.X()",
+                "Bomb.Y()",
                 ""
               ],
               "subInstructions": []
@@ -6803,8 +6912,8 @@
               "parameters": [
                 "",
                 "BasicExplosionSharp",
-                "AllMeteors.X()",
-                "AllMeteors.Y()",
+                "Bomb.X()",
+                "Bomb.Y()",
                 ""
               ],
               "subInstructions": []
@@ -6817,8 +6926,21 @@
               "parameters": [
                 "",
                 "BasicExplosionSmooth",
-                "AllMeteors.X()",
-                "AllMeteors.Y()",
+                "Bomb.X()",
+                "Bomb.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Health::Health::Hit"
+              },
+              "parameters": [
+                "AllMeteors",
+                "Health",
+                "500",
                 ""
               ],
               "subInstructions": []
@@ -6936,6 +7058,81 @@
                 "AllMeteors",
                 "Health",
                 "200",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Health::Health::IsDead"
+              },
+              "parameters": [
+                "AllMeteors",
+                "Health",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BasicExplosion",
+                "AllMeteors.X()+75",
+                "AllMeteors.Y()+75",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BasicExplosionSharp",
+                "AllMeteors.X()+75",
+                "AllMeteors.Y()+75",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "BasicExplosionSmooth",
+                "AllMeteors.X()+75",
+                "AllMeteors.Y()+75",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "AllMeteors",
                 ""
               ],
               "subInstructions": []
@@ -8181,10 +8378,33 @@
               },
               "parameters": [
                 "",
-                "SplashMAX",
+                "SplashText",
                 "HealthUp.X()",
                 "HealthUp.Y()",
                 ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "TextObject::ChangeColor"
+              },
+              "parameters": [
+                "SplashText",
+                "\"12;255;0\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "SplashText",
+                "=",
+                "\"HP+\""
               ],
               "subInstructions": []
             },
@@ -8245,7 +8465,7 @@
               },
               "parameters": [
                 "",
-                "SplashScore",
+                "SplashText",
                 "BronzeStar.X()",
                 "BronzeStar.Y()",
                 ""
@@ -8258,7 +8478,7 @@
                 "value": "TextObject::String"
               },
               "parameters": [
-                "SplashScore",
+                "SplashText",
                 "=",
                 "\"+\"+VariableString(ScoreHopper)"
               ],
@@ -8307,7 +8527,7 @@
               },
               "parameters": [
                 "",
-                "SplashScore",
+                "SplashText",
                 "SilverStar.X()",
                 "SilverStar.Y()",
                 ""
@@ -8320,7 +8540,7 @@
                 "value": "TextObject::String"
               },
               "parameters": [
-                "SplashScore",
+                "SplashText",
                 "=",
                 "\"+\"+VariableString(ScoreHopper)"
               ],
@@ -8369,7 +8589,7 @@
               },
               "parameters": [
                 "",
-                "SplashScore",
+                "SplashText",
                 "GoldStar.X()",
                 "GoldStar.Y()",
                 ""
@@ -8382,7 +8602,7 @@
                 "value": "TextObject::String"
               },
               "parameters": [
-                "SplashScore",
+                "SplashText",
                 "=",
                 "\"+\"+VariableString(ScoreHopper)"
               ],
@@ -8494,7 +8714,7 @@
               "parameters": [
                 "Ammo",
                 "=",
-                "\"Ammo: \"+VariableString(Ammo)"
+                "\"(S)pecial: \"+VariableString(Ammo)"
               ],
               "subInstructions": []
             },
@@ -8516,7 +8736,7 @@
               },
               "parameters": [
                 "",
-                "SplashMAX",
+                "SplashText",
                 "AmmoUp.X()",
                 "AmmoUp.Y()",
                 "\"\""
@@ -8526,12 +8746,23 @@
             {
               "type": {
                 "inverted": false,
+                "value": "TextObject::ChangeColor"
+              },
+              "parameters": [
+                "SplashText",
+                "\"12;255;0\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
                 "value": "TextObject::String"
               },
               "parameters": [
-                "SplashMAX",
+                "SplashText",
                 "=",
-                "\"+++\""
+                "\"Special+\""
               ],
               "subInstructions": []
             },
