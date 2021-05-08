@@ -516,6 +516,9 @@ var gdjs;
         this._flowDirty = true;
       }
     }
+    getParticleCount() {
+      return this._renderer.getParticleCount();
+    }
     getTank() {
       return this.tank;
     }

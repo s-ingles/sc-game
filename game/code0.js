@@ -50,9 +50,8 @@ gdjs.SplashCode.condition0IsTrue_0.val = false;
 gdjs.SplashCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 }if (gdjs.SplashCode.condition0IsTrue_0.val) {
 gdjs.copyArray(runtimeScene.getObjects("Instruction"), gdjs.SplashCode.GDInstructionObjects1);
-{runtimeScene.getGame().getVariables().get("Mute").setNumber(-(1));
-}{runtimeScene.getGame().getVariables().get("DevMode").setNumber(-(1));
-}{runtimeScene.getGame().getVariables().get("Invincible").setNumber(-(1));
+{gdjs.evtTools.common.setVariableBoolean(runtimeScene.getGame().getVariables().getFromIndex(1), false);
+}{gdjs.evtTools.common.setVariableBoolean(runtimeScene.getGame().getVariables().getFromIndex(0), false);
 }{for(var i = 0, len = gdjs.SplashCode.GDInstructionObjects1.length ;i < len;++i) {
     gdjs.SplashCode.GDInstructionObjects1[i].getBehavior("Flash").Flash(3, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }
