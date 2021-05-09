@@ -652,6 +652,51 @@
         "name": "assets\\gfx\\PNG\\Enemies\\enemyBlueDrone.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/gfx/PNG/Enemies/greenBoss.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\gfx\\PNG\\Enemies\\greenBoss.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/gfx/PNG/Enemies/greenBoss-Charge.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\gfx\\PNG\\Enemies\\greenBoss-Charge.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/gfx/PNG/Enemies/redBoss.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\gfx\\PNG\\Enemies\\redBoss.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/gfx/PNG/Enemies/blackBoss.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\gfx\\PNG\\Enemies\\blackBoss.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/gfx/PNG/Enemies/blueBoss.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\gfx\\PNG\\Enemies\\blueBoss.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -2515,7 +2560,7 @@
           "name": "Ammo",
           "persistentUuid": "05e99cc9-4180-4aa6-9d23-5a4673a577d5",
           "width": 0,
-          "x": 316,
+          "x": 320,
           "y": 870,
           "zOrder": 13,
           "numberProperties": [],
@@ -3729,7 +3774,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "assets\\gfx\\PNG\\Enemies\\enemyRed2.png",
+                      "image": "assets\\gfx\\PNG\\Enemies\\redBoss.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -3775,7 +3820,7 @@
           ],
           "animations": [
             {
-              "name": "",
+              "name": "GBNormal",
               "useMultipleDirections": false,
               "directions": [
                 {
@@ -3784,7 +3829,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "assets\\gfx\\PNG\\Enemies\\enemyGreen4.png",
+                      "image": "assets\\gfx\\PNG\\Enemies\\greenBoss.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -3802,6 +3847,70 @@
                   ]
                 }
               ]
+            },
+            {
+              "name": "GBCharge",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets\\gfx\\PNG\\Enemies\\greenBoss-Charge.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 51,
+                            "y": 0
+                          },
+                          {
+                            "x": 111,
+                            "y": -0.5
+                          },
+                          {
+                            "x": 161,
+                            "y": 32.5
+                          },
+                          {
+                            "x": 162,
+                            "y": 119.5
+                          },
+                          {
+                            "x": 102,
+                            "y": 166.5
+                          },
+                          {
+                            "x": 65,
+                            "y": 165.5
+                          },
+                          {
+                            "x": 3,
+                            "y": 121.5
+                          },
+                          {
+                            "x": 0,
+                            "y": 28.5
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -3815,7 +3924,7 @@
             {
               "name": "FireBullet",
               "type": "FireBullet::FireBullet",
-              "FireCooldown": 0.25,
+              "FireCooldown": 0.5,
               "HasJustFired": false
             },
             {
@@ -3839,7 +3948,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "assets\\gfx\\PNG\\Enemies\\enemyBlack3.png",
+                      "image": "assets\\gfx\\PNG\\Enemies\\blackBoss.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -3894,7 +4003,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "assets\\gfx\\PNG\\Enemies\\enemyBlue5.png",
+                      "image": "assets\\gfx\\PNG\\Enemies\\blueBoss.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -4976,6 +5085,30 @@
                     "value": "ModVarScene"
                   },
                   "parameters": [
+                    "SpecialSelected",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "Ammo",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
                     "BaseSpeed",
                     "=",
                     "250"
@@ -5071,18 +5204,6 @@
                   },
                   "parameters": [
                     "BossesSpawned",
-                    "=",
-                    "0"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ModVarScene"
-                  },
-                  "parameters": [
-                    "Ammo",
                     "=",
                     "0"
                   ],
@@ -7713,27 +7834,6 @@
           "disabled": false,
           "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "ChangeScale"
-              },
-              "parameters": [
-                "Boss",
-                "=",
-                "2"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
               "type": {
@@ -8510,14 +8610,35 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "VarScene"
+                    "value": "BuiltinCommonInstructions::And"
                   },
-                  "parameters": [
-                    "EnemyPool",
-                    "=",
-                    "3"
-                  ],
-                  "subInstructions": []
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "EnemyPool",
+                        "=",
+                        "3"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "Health::Health::IsDead"
+                      },
+                      "parameters": [
+                        "Player",
+                        "Health",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ]
                 }
               ],
               "actions": [
@@ -8533,6 +8654,42 @@
                     "EnemyBoss3.Y()+100",
                     "BossBullet",
                     "Player.X()",
+                    "Player.Y()",
+                    "Variable(Speed)*4",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "FireBullet::FireBullet::FireTowardPosition"
+                  },
+                  "parameters": [
+                    "EnemyBoss3",
+                    "FireBullet",
+                    "EnemyBoss3.X()+50",
+                    "EnemyBoss3.Y()+100",
+                    "BossBullet",
+                    "Player.X()-50",
+                    "Player.Y()",
+                    "Variable(Speed)*4",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "FireBullet::FireBullet::FireTowardPosition"
+                  },
+                  "parameters": [
+                    "EnemyBoss3",
+                    "FireBullet",
+                    "EnemyBoss3.X()+150",
+                    "EnemyBoss3.Y()+100",
+                    "BossBullet",
+                    "Player.X()+50",
                     "Player.Y()",
                     "Variable(Speed)*4",
                     ""
@@ -11586,7 +11743,7 @@
               "parameters": [
                 "Combo",
                 "=",
-                "1"
+                "max(floor(Variable(Combo)*0.75), 1)"
               ],
               "subInstructions": []
             },
@@ -11732,7 +11889,7 @@
               "parameters": [
                 "Combo",
                 "=",
-                "(round(Variable(Combo)*100))/100"
+                "(round(Variable(Combo)*10))/10"
               ],
               "subInstructions": []
             }
