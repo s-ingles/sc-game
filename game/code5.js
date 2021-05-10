@@ -549,10 +549,27 @@ gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.GameLoopCode.GDPlayerObje
 
 {
 
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.GameLoopCode.GDPlayerObjects2);
 
 gdjs.GameLoopCode.condition0IsTrue_0.val = false;
 {
-gdjs.GameLoopCode.condition0IsTrue_0.val = gdjs.evtTools.input.wasKeyReleased(runtimeScene, "c");
+{gdjs.GameLoopCode.conditionTrue_1 = gdjs.GameLoopCode.condition0IsTrue_0;
+gdjs.GameLoopCode.condition0IsTrue_1.val = false;
+gdjs.GameLoopCode.condition1IsTrue_1.val = false;
+{
+gdjs.GameLoopCode.condition0IsTrue_1.val = gdjs.evtTools.input.wasKeyReleased(runtimeScene, "c");
+}if ( gdjs.GameLoopCode.condition0IsTrue_1.val ) {
+{
+for(var i = 0, k = 0, l = gdjs.GameLoopCode.GDPlayerObjects2.length;i<l;++i) {
+    if ( !(gdjs.GameLoopCode.GDPlayerObjects2[i].getBehavior("Health").IsDead((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))) ) {
+        gdjs.GameLoopCode.condition1IsTrue_1.val = true;
+        gdjs.GameLoopCode.GDPlayerObjects2[k] = gdjs.GameLoopCode.GDPlayerObjects2[i];
+        ++k;
+    }
+}
+gdjs.GameLoopCode.GDPlayerObjects2.length = k;}}
+gdjs.GameLoopCode.conditionTrue_1.val = true && gdjs.GameLoopCode.condition0IsTrue_1.val && gdjs.GameLoopCode.condition1IsTrue_1.val;
+}
 }if (gdjs.GameLoopCode.condition0IsTrue_0.val) {
 {runtimeScene.getVariables().get("SPSelection").setNumber(gdjs.evtTools.common.mod(gdjs.evtTools.common.getVariableNumber(runtimeScene.getVariables().get("SPSelection")) + 1, gdjs.evtTools.common.getVariableNumber(runtimeScene.getVariables().get("SPOptions"))));
 }
@@ -2001,6 +2018,7 @@ gdjs.copyArray(runtimeScene.getObjects("Combo"), gdjs.GameLoopCode.GDComboObject
 gdjs.copyArray(runtimeScene.getObjects("DevOptions"), gdjs.GameLoopCode.GDDevOptionsObjects1);
 gdjs.copyArray(runtimeScene.getObjects("Health"), gdjs.GameLoopCode.GDHealthObjects1);
 gdjs.copyArray(runtimeScene.getObjects("Score"), gdjs.GameLoopCode.GDScoreObjects1);
+gdjs.copyArray(runtimeScene.getObjects("SpecialSel"), gdjs.GameLoopCode.GDSpecialSelObjects1);
 gdjs.GameLoopCode.GDFinalScoreObjects1.length = 0;
 
 gdjs.GameLoopCode.GDGameOverObjects1.length = 0;
@@ -2024,6 +2042,9 @@ gdjs.GameLoopCode.GDInstructObjects1.length = 0;
 }
 }{for(var i = 0, len = gdjs.GameLoopCode.GDAmmoObjects1.length ;i < len;++i) {
     gdjs.GameLoopCode.GDAmmoObjects1[i].hide();
+}
+}{for(var i = 0, len = gdjs.GameLoopCode.GDSpecialSelObjects1.length ;i < len;++i) {
+    gdjs.GameLoopCode.GDSpecialSelObjects1[i].hide();
 }
 }{gdjs.evtTools.object.createObjectOnScene((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : runtimeScene), gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDGameOverObjects1Objects, 100, 400, "UI");
 }{gdjs.evtTools.object.createObjectOnScene((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : runtimeScene), gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDFinalScoreObjects1Objects, 10, 870, "UI");

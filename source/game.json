@@ -9922,13 +9922,34 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "KeyReleased"
+                    "value": "BuiltinCommonInstructions::And"
                   },
-                  "parameters": [
-                    "",
-                    "c"
-                  ],
-                  "subInstructions": []
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "KeyReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "c"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "Health::Health::IsDead"
+                      },
+                      "parameters": [
+                        "Player",
+                        "Health",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ]
                 }
               ],
               "actions": [
@@ -17377,6 +17398,16 @@
                   },
                   "parameters": [
                     "Ammo"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Cache"
+                  },
+                  "parameters": [
+                    "SpecialSel"
                   ],
                   "subInstructions": []
                 },
