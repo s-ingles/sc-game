@@ -760,6 +760,51 @@
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/gfx/PNG/Effects/shield2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\gfx\\PNG\\Effects\\shield2.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/gfx/PNG/Effects/wave.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\gfx\\PNG\\Effects\\wave.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/sfx/Audio/lowFrequency_explosion_000.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\Audio\\lowFrequency_explosion_000.ogg",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/sfx/Audio/forceField_000.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\Audio\\forceField_000.ogg",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/gfx/Bonus/sfx_shieldDown.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\gfx\\Bonus\\sfx_shieldDown.ogg",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -6340,7 +6385,7 @@
           "persistentUuid": "aabe8cb8-77e6-4f2d-a958-dc918dff2602",
           "width": 0,
           "x": 200,
-          "y": 770,
+          "y": 730,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -6404,7 +6449,7 @@
           "persistentUuid": "a5b1cf0f-9d0d-4c3c-8f55-e5bd4c0d92c1",
           "width": 0,
           "x": 311,
-          "y": 9,
+          "y": 10,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -6486,6 +6531,22 @@
           "x": 10,
           "y": 10,
           "zOrder": 18,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "UI",
+          "locked": false,
+          "name": "SpecialSel",
+          "persistentUuid": "835151ba-98c2-490f-98a5-6dbc7bb645ad",
+          "width": 0,
+          "x": 362,
+          "y": 822,
+          "zOrder": 19,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -6696,7 +6757,7 @@
               "name": "StayOnScreen",
               "type": "StayOnScreen::StayOnScreen",
               "MarginTop": 1,
-              "MarginBottom": 100,
+              "MarginBottom": 130,
               "MarginLeft": 1,
               "MarginRight": 60
             }
@@ -6803,6 +6864,51 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "assets\\gfx\\PNG\\Lasers\\laserBlue08.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Wave",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "behaviors": [
+            {
+              "name": "DestroyOutside",
+              "type": "DestroyOutsideBehavior::DestroyOutside",
+              "extraBorder": 10
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets\\gfx\\PNG\\Effects\\wave.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -7664,7 +7770,7 @@
               "name": "Health",
               "type": "Health::Health",
               "Health": 1000,
-              "DamageCooldown": 0,
+              "DamageCooldown": 0.1,
               "MaxHealth": 0,
               "IsJustDamaged": false,
               "CooldownActive": false
@@ -7719,7 +7825,7 @@
               "name": "Health",
               "type": "Health::Health",
               "Health": 1000,
-              "DamageCooldown": 0,
+              "DamageCooldown": 0.1,
               "MaxHealth": 0,
               "IsJustDamaged": false,
               "CooldownActive": false
@@ -7838,7 +7944,7 @@
               "name": "Health",
               "type": "Health::Health",
               "Health": 1000,
-              "DamageCooldown": 0,
+              "DamageCooldown": 0.1,
               "MaxHealth": 0,
               "IsJustDamaged": false,
               "CooldownActive": false
@@ -7893,7 +7999,7 @@
               "name": "Health",
               "type": "Health::Health",
               "Health": 1000,
-              "DamageCooldown": 0,
+              "DamageCooldown": 0.1,
               "MaxHealth": 0,
               "IsJustDamaged": false,
               "CooldownActive": false
@@ -8685,6 +8791,31 @@
         {
           "bold": true,
           "italic": false,
+          "name": "SpecialSel",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Score",
+              "type": "string",
+              "value": ""
+            }
+          ],
+          "behaviors": [],
+          "string": "Bomb [C]",
+          "font": "assets\\gfx\\Bonus\\kenvector_future.ttf",
+          "characterSize": 20,
+          "color": {
+            "b": 0,
+            "g": 249,
+            "r": 255
+          }
+        },
+        {
+          "bold": true,
+          "italic": false,
           "name": "Ammo",
           "smoothed": true,
           "tags": "",
@@ -9245,7 +9376,7 @@
                   "parameters": [
                     "SpeedReductionFactor",
                     "=",
-                    "2"
+                    "1.4"
                   ],
                   "subInstructions": []
                 },
@@ -9267,6 +9398,18 @@
                     "value": "ModVarScene"
                   },
                   "parameters": [
+                    "SPMaxAmmo",
+                    "=",
+                    "9"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
                     "BombBaseDamage",
                     "=",
                     "500"
@@ -9279,9 +9422,45 @@
                     "value": "ModVarScene"
                   },
                   "parameters": [
-                    "BombDamageFactor",
+                    "WaveBaseDamage",
                     "=",
-                    "0.85"
+                    "100"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "SPDamageFactor",
+                    "=",
+                    "0.5"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "SPSelection",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "SPOptions",
+                    "=",
+                    "2"
                   ],
                   "subInstructions": []
                 }
@@ -9743,6 +9922,138 @@
                 {
                   "type": {
                     "inverted": false,
+                    "value": "KeyReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "c"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "SPSelection",
+                    "=",
+                    "mod(Variable(SPSelection)+1, Variable(SPOptions))"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "SPSelection",
+                        "=",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "SpecialSel",
+                        "=",
+                        "\"Bomb [C]\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "PlaySoundCanal"
+                      },
+                      "parameters": [
+                        "",
+                        "assets\\sfx\\Audio\\laserLarge_001.ogg",
+                        "10",
+                        "",
+                        "50",
+                        "0.5"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "SPSelection",
+                        "=",
+                        "1"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "SpecialSel",
+                        "=",
+                        "\"Wave [C]\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "PlaySoundCanal"
+                      },
+                      "parameters": [
+                        "",
+                        "assets\\sfx\\Audio\\forceField_000.ogg",
+                        "10",
+                        "",
+                        "25",
+                        "1"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ]
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
                     "value": "KeyPressed"
                   },
                   "parameters": [
@@ -9862,6 +10173,18 @@
                         "0"
                       ],
                       "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "SPSelection",
+                        "=",
+                        "0"
+                      ],
+                      "subInstructions": []
                     }
                   ]
                 }
@@ -9913,10 +10236,143 @@
                       "parameters": [
                         "",
                         "assets\\sfx\\Audio\\laserLarge_001.ogg",
-                        "3",
+                        "9",
                         "",
                         "50",
                         "0.5"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "Ammo",
+                        "-",
+                        "1"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "Ammo",
+                        "=",
+                        "\"(S)pecial: \"+VariableString(Ammo)"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ]
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "KeyReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "s"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "Ammo",
+                        ">",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "SPSelection",
+                        "=",
+                        "1"
+                      ],
+                      "subInstructions": []
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "FireBullet::FireBullet::Fire"
+                  },
+                  "parameters": [
+                    "Player",
+                    "FireBullet",
+                    "Player.X()+15",
+                    "Player.Y()-60",
+                    "Wave",
+                    "270",
+                    "Variable(Speed)*1.1",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "FireBullet::FireBullet::HasJustFired"
+                      },
+                      "parameters": [
+                        "Player",
+                        "FireBullet",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "PlaySoundCanal"
+                      },
+                      "parameters": [
+                        "",
+                        "assets\\sfx\\Audio\\forceField_000.ogg",
+                        "9",
+                        "",
+                        "25",
+                        "1"
                       ],
                       "subInstructions": []
                     },
@@ -10474,7 +10930,7 @@
                   "parameters": [
                     "Ammo",
                     "=",
-                    "min(Variable(Ammo)+9, 9)"
+                    "Variable(SPMaxAmmo)"
                   ],
                   "subInstructions": []
                 },
@@ -10862,7 +11318,7 @@
               },
               "parameters": [
                 "Player",
-                "HostileBullet",
+                "EnemyBullet",
                 "",
                 "",
                 ""
@@ -10889,7 +11345,54 @@
                 "value": "Delete"
               },
               "parameters": [
-                "HostileBullet",
+                "EnemyBullet",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "BossBullet",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "IsDamaged",
+                "=",
+                "50"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "BossBullet",
                 ""
               ],
               "subInstructions": []
@@ -11236,6 +11739,74 @@
         {
           "disabled": false,
           "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "PosY"
+              },
+              "parameters": [
+                "Wave",
+                "<=",
+                "CameraY()-600"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "Wave",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "HostileBullet",
+                "Wave",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "HostileBullet",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
           "type": "BuiltinCommonInstructions::Comment",
           "color": {
             "b": 109,
@@ -11411,7 +11982,7 @@
               "parameters": [
                 "Enemies",
                 "Health",
-                "(Variable(BombBaseDamage)*max(Variable(GameTime),1))*Variable(BombDamageFactor)",
+                "(Variable(BombBaseDamage)*max(Variable(GameTime),1))*Variable(SPDamageFactor)",
                 ""
               ],
               "subInstructions": []
@@ -11428,6 +11999,43 @@
                 "",
                 "30",
                 "1.25"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Enemies",
+                "Wave",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Health::Health::Hit"
+              },
+              "parameters": [
+                "Enemies",
+                "Health",
+                "(Variable(WaveBaseDamage)*max(Variable(GameTime),1))*Variable(SPDamageFactor)",
+                ""
               ],
               "subInstructions": []
             }
@@ -12077,7 +12685,7 @@
               "parameters": [
                 "Boss",
                 "Health",
-                "(Variable(BombBaseDamage)*max(Variable(GameTime),1))*Variable(BombDamageFactor)",
+                "(Variable(BombBaseDamage)*max(Variable(GameTime),1))*Variable(SPDamageFactor)",
                 ""
               ],
               "subInstructions": []
@@ -12094,6 +12702,43 @@
                 "",
                 "30",
                 "1.25"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Boss",
+                "Wave",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Health::Health::Hit"
+              },
+              "parameters": [
+                "Boss",
+                "Health",
+                "(Variable(WaveBaseDamage)*max(Variable(GameTime),1))*Variable(SPDamageFactor)",
+                ""
               ],
               "subInstructions": []
             }
@@ -13467,6 +14112,43 @@
                 "",
                 "30",
                 "1.25"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "AllMeteors",
+                "Wave",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Health::Health::Hit"
+              },
+              "parameters": [
+                "AllMeteors",
+                "Health",
+                "(Variable(WaveBaseDamage)*max(Variable(GameTime),1))*Variable(SPDamageFactor)",
+                ""
               ],
               "subInstructions": []
             }
@@ -16117,7 +16799,7 @@
               "parameters": [
                 "Ammo",
                 "=",
-                "min(Variable(Ammo)+3, 9)"
+                "min(Variable(Ammo)+3, Variable(SPMaxAmmo))"
               ],
               "subInstructions": []
             },
@@ -16188,7 +16870,7 @@
               },
               "parameters": [
                 "",
-                "assets\\gfx\\Bonus\\sfx_shieldUp.ogg",
+                "assets\\gfx\\Bonus\\sfx_shieldDown.ogg",
                 "",
                 "50",
                 ""
