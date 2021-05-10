@@ -1,4 +1,6 @@
 gdjs.InstructionsCode = {};
+gdjs.InstructionsCode.GDButtonObjects1_1final = [];
+
 gdjs.InstructionsCode.GDBackgroundObjects1= [];
 gdjs.InstructionsCode.GDBackgroundObjects2= [];
 gdjs.InstructionsCode.GDBackgroundObjects3= [];
@@ -50,6 +52,10 @@ gdjs.InstructionsCode.conditionTrue_1 = {val:false};
 gdjs.InstructionsCode.condition0IsTrue_1 = {val:false};
 gdjs.InstructionsCode.condition1IsTrue_1 = {val:false};
 gdjs.InstructionsCode.condition2IsTrue_1 = {val:false};
+gdjs.InstructionsCode.conditionTrue_2 = {val:false};
+gdjs.InstructionsCode.condition0IsTrue_2 = {val:false};
+gdjs.InstructionsCode.condition1IsTrue_2 = {val:false};
+gdjs.InstructionsCode.condition2IsTrue_2 = {val:false};
 
 
 gdjs.InstructionsCode.eventsList0 = function(runtimeScene) {
@@ -80,7 +86,7 @@ gdjs.InstructionsCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableB
 }
 
 
-};gdjs.InstructionsCode.mapOfGDgdjs_46InstructionsCode_46GDButtonObjects1Objects = Hashtable.newFrom({"Button": gdjs.InstructionsCode.GDButtonObjects1});gdjs.InstructionsCode.eventsList1 = function(runtimeScene) {
+};gdjs.InstructionsCode.mapOfGDgdjs_46InstructionsCode_46GDButtonObjects2Objects = Hashtable.newFrom({"Button": gdjs.InstructionsCode.GDButtonObjects2});gdjs.InstructionsCode.eventsList1 = function(runtimeScene) {
 
 {
 
@@ -172,20 +178,44 @@ gdjs.copyArray(runtimeScene.getObjects("DevOptions"), gdjs.InstructionsCode.GDDe
 
 {
 
-gdjs.copyArray(runtimeScene.getObjects("Button"), gdjs.InstructionsCode.GDButtonObjects1);
+gdjs.InstructionsCode.GDButtonObjects1.length = 0;
+
 
 gdjs.InstructionsCode.condition0IsTrue_0.val = false;
 {
 {gdjs.InstructionsCode.conditionTrue_1 = gdjs.InstructionsCode.condition0IsTrue_0;
-gdjs.InstructionsCode.condition0IsTrue_1.val = false;
+gdjs.InstructionsCode.GDButtonObjects1_1final.length = 0;gdjs.InstructionsCode.condition0IsTrue_1.val = false;
 gdjs.InstructionsCode.condition1IsTrue_1.val = false;
 {
-gdjs.InstructionsCode.condition0IsTrue_1.val = gdjs.evtTools.input.cursorOnObject(gdjs.InstructionsCode.mapOfGDgdjs_46InstructionsCode_46GDButtonObjects1Objects, runtimeScene, true, false);
-}if ( gdjs.InstructionsCode.condition0IsTrue_1.val ) {
+gdjs.InstructionsCode.condition0IsTrue_1.val = gdjs.evtTools.input.wasKeyReleased(runtimeScene, "b");
+if( gdjs.InstructionsCode.condition0IsTrue_1.val ) {
+    gdjs.InstructionsCode.conditionTrue_1.val = true;
+}
+}
 {
-gdjs.InstructionsCode.condition1IsTrue_1.val = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
+gdjs.copyArray(runtimeScene.getObjects("Button"), gdjs.InstructionsCode.GDButtonObjects2);
+{gdjs.InstructionsCode.conditionTrue_2 = gdjs.InstructionsCode.condition1IsTrue_1;
+gdjs.InstructionsCode.condition0IsTrue_2.val = false;
+gdjs.InstructionsCode.condition1IsTrue_2.val = false;
+{
+gdjs.InstructionsCode.condition0IsTrue_2.val = gdjs.evtTools.input.cursorOnObject(gdjs.InstructionsCode.mapOfGDgdjs_46InstructionsCode_46GDButtonObjects2Objects, runtimeScene, true, false);
+}if ( gdjs.InstructionsCode.condition0IsTrue_2.val ) {
+{
+gdjs.InstructionsCode.condition1IsTrue_2.val = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
 }}
-gdjs.InstructionsCode.conditionTrue_1.val = true && gdjs.InstructionsCode.condition0IsTrue_1.val && gdjs.InstructionsCode.condition1IsTrue_1.val;
+gdjs.InstructionsCode.conditionTrue_2.val = true && gdjs.InstructionsCode.condition0IsTrue_2.val && gdjs.InstructionsCode.condition1IsTrue_2.val;
+}
+if( gdjs.InstructionsCode.condition1IsTrue_1.val ) {
+    gdjs.InstructionsCode.conditionTrue_1.val = true;
+    for(var j = 0, jLen = gdjs.InstructionsCode.GDButtonObjects2.length;j<jLen;++j) {
+        if ( gdjs.InstructionsCode.GDButtonObjects1_1final.indexOf(gdjs.InstructionsCode.GDButtonObjects2[j]) === -1 )
+            gdjs.InstructionsCode.GDButtonObjects1_1final.push(gdjs.InstructionsCode.GDButtonObjects2[j]);
+    }
+}
+}
+{
+gdjs.copyArray(gdjs.InstructionsCode.GDButtonObjects1_1final, gdjs.InstructionsCode.GDButtonObjects1);
+}
 }
 }if (gdjs.InstructionsCode.condition0IsTrue_0.val) {
 {gdjs.evtTools.runtimeScene.popScene(runtimeScene);

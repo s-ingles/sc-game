@@ -1,4 +1,6 @@
 gdjs.LeaderboardCode = {};
+gdjs.LeaderboardCode.GDButtonObjects1_1final = [];
+
 gdjs.LeaderboardCode.GDBackgroundObjects1= [];
 gdjs.LeaderboardCode.GDBackgroundObjects2= [];
 gdjs.LeaderboardCode.GDBackgroundObjects3= [];
@@ -62,6 +64,10 @@ gdjs.LeaderboardCode.conditionTrue_1 = {val:false};
 gdjs.LeaderboardCode.condition0IsTrue_1 = {val:false};
 gdjs.LeaderboardCode.condition1IsTrue_1 = {val:false};
 gdjs.LeaderboardCode.condition2IsTrue_1 = {val:false};
+gdjs.LeaderboardCode.conditionTrue_2 = {val:false};
+gdjs.LeaderboardCode.condition0IsTrue_2 = {val:false};
+gdjs.LeaderboardCode.condition1IsTrue_2 = {val:false};
+gdjs.LeaderboardCode.condition2IsTrue_2 = {val:false};
 
 
 gdjs.LeaderboardCode.eventsList0 = function(runtimeScene) {
@@ -92,7 +98,7 @@ gdjs.LeaderboardCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableBo
 }
 
 
-};gdjs.LeaderboardCode.mapOfGDgdjs_46LeaderboardCode_46GDButtonObjects1Objects = Hashtable.newFrom({"Button": gdjs.LeaderboardCode.GDButtonObjects1});gdjs.LeaderboardCode.eventsList1 = function(runtimeScene) {
+};gdjs.LeaderboardCode.mapOfGDgdjs_46LeaderboardCode_46GDButtonObjects2Objects = Hashtable.newFrom({"Button": gdjs.LeaderboardCode.GDButtonObjects2});gdjs.LeaderboardCode.eventsList1 = function(runtimeScene) {
 
 {
 
@@ -239,20 +245,44 @@ gdjs.copyArray(runtimeScene.getObjects("DevOptions"), gdjs.LeaderboardCode.GDDev
 
 {
 
-gdjs.copyArray(runtimeScene.getObjects("Button"), gdjs.LeaderboardCode.GDButtonObjects1);
+gdjs.LeaderboardCode.GDButtonObjects1.length = 0;
+
 
 gdjs.LeaderboardCode.condition0IsTrue_0.val = false;
 {
 {gdjs.LeaderboardCode.conditionTrue_1 = gdjs.LeaderboardCode.condition0IsTrue_0;
-gdjs.LeaderboardCode.condition0IsTrue_1.val = false;
+gdjs.LeaderboardCode.GDButtonObjects1_1final.length = 0;gdjs.LeaderboardCode.condition0IsTrue_1.val = false;
 gdjs.LeaderboardCode.condition1IsTrue_1.val = false;
 {
-gdjs.LeaderboardCode.condition0IsTrue_1.val = gdjs.evtTools.input.cursorOnObject(gdjs.LeaderboardCode.mapOfGDgdjs_46LeaderboardCode_46GDButtonObjects1Objects, runtimeScene, true, false);
-}if ( gdjs.LeaderboardCode.condition0IsTrue_1.val ) {
+gdjs.LeaderboardCode.condition0IsTrue_1.val = gdjs.evtTools.input.wasKeyReleased(runtimeScene, "b");
+if( gdjs.LeaderboardCode.condition0IsTrue_1.val ) {
+    gdjs.LeaderboardCode.conditionTrue_1.val = true;
+}
+}
 {
-gdjs.LeaderboardCode.condition1IsTrue_1.val = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
+gdjs.copyArray(runtimeScene.getObjects("Button"), gdjs.LeaderboardCode.GDButtonObjects2);
+{gdjs.LeaderboardCode.conditionTrue_2 = gdjs.LeaderboardCode.condition1IsTrue_1;
+gdjs.LeaderboardCode.condition0IsTrue_2.val = false;
+gdjs.LeaderboardCode.condition1IsTrue_2.val = false;
+{
+gdjs.LeaderboardCode.condition0IsTrue_2.val = gdjs.evtTools.input.cursorOnObject(gdjs.LeaderboardCode.mapOfGDgdjs_46LeaderboardCode_46GDButtonObjects2Objects, runtimeScene, true, false);
+}if ( gdjs.LeaderboardCode.condition0IsTrue_2.val ) {
+{
+gdjs.LeaderboardCode.condition1IsTrue_2.val = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
 }}
-gdjs.LeaderboardCode.conditionTrue_1.val = true && gdjs.LeaderboardCode.condition0IsTrue_1.val && gdjs.LeaderboardCode.condition1IsTrue_1.val;
+gdjs.LeaderboardCode.conditionTrue_2.val = true && gdjs.LeaderboardCode.condition0IsTrue_2.val && gdjs.LeaderboardCode.condition1IsTrue_2.val;
+}
+if( gdjs.LeaderboardCode.condition1IsTrue_1.val ) {
+    gdjs.LeaderboardCode.conditionTrue_1.val = true;
+    for(var j = 0, jLen = gdjs.LeaderboardCode.GDButtonObjects2.length;j<jLen;++j) {
+        if ( gdjs.LeaderboardCode.GDButtonObjects1_1final.indexOf(gdjs.LeaderboardCode.GDButtonObjects2[j]) === -1 )
+            gdjs.LeaderboardCode.GDButtonObjects1_1final.push(gdjs.LeaderboardCode.GDButtonObjects2[j]);
+    }
+}
+}
+{
+gdjs.copyArray(gdjs.LeaderboardCode.GDButtonObjects1_1final, gdjs.LeaderboardCode.GDButtonObjects1);
+}
 }
 }if (gdjs.LeaderboardCode.condition0IsTrue_0.val) {
 {gdjs.evtTools.runtimeScene.popScene(runtimeScene);

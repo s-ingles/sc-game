@@ -2241,33 +2241,53 @@
             {
               "type": {
                 "inverted": false,
-                "value": "BuiltinCommonInstructions::And"
+                "value": "BuiltinCommonInstructions::Or"
               },
               "parameters": [],
               "subInstructions": [
                 {
                   "type": {
                     "inverted": false,
-                    "value": "SourisSurObjet"
+                    "value": "KeyReleased"
                   },
                   "parameters": [
-                    "Button",
                     "",
-                    "",
-                    ""
+                    "b"
                   ],
                   "subInstructions": []
                 },
                 {
                   "type": {
                     "inverted": false,
-                    "value": "MouseButtonReleased"
+                    "value": "BuiltinCommonInstructions::And"
                   },
-                  "parameters": [
-                    "",
-                    "Left"
-                  ],
-                  "subInstructions": []
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "Button",
+                        "",
+                        "",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ],
+                      "subInstructions": []
+                    }
+                  ]
                 }
               ]
             }
@@ -2589,7 +2609,7 @@
           "persistentUuid": "73ce7a31-0f37-49b2-9d96-bcacbe52a38a",
           "width": 0,
           "x": 25,
-          "y": 357,
+          "y": 318,
           "zOrder": 8,
           "numberProperties": [],
           "stringProperties": [],
@@ -2604,8 +2624,8 @@
           "name": "HP",
           "persistentUuid": "43d50a0b-605b-49b7-ae94-0817d0100188",
           "width": 32,
-          "x": 358,
-          "y": 537,
+          "x": 355,
+          "y": 598,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -2620,8 +2640,8 @@
           "name": "Bonus",
           "persistentUuid": "e258f370-18e8-4824-9cc1-6f1ab84a232d",
           "width": 32,
-          "x": 358,
-          "y": 589,
+          "x": 354,
+          "y": 655,
           "zOrder": 10,
           "numberProperties": [],
           "stringProperties": [],
@@ -2652,8 +2672,8 @@
           "name": "AmmoUp",
           "persistentUuid": "724a0583-fcfa-4ba3-b98a-85bc3bec210a",
           "width": 0,
-          "x": 357,
-          "y": 642,
+          "x": 353,
+          "y": 709,
           "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
@@ -2786,7 +2806,7 @@
           "underlined": false,
           "variables": [],
           "behaviors": [],
-          "string": "Movement:            Up, Down, \n                                          Left, Right\n\nFire:                             SpaceBar\n\nFire Special:                   S\n\nHealth Up:\n\nBonus Points:\n\nSpecial Ammo:\n\nToggle Sound:               M\n\nSet Dev Mode:          [zero]",
+          "string": "Movement:            Up, Down, \n                                          Left, Right\n\nFire:                             SpaceBar\n\nFire Special:                    S\n\nToggle Sound:               M\n\nPause Game:                     P\n\nHealth Up:\n\nBonus Points:\n\nSpecial Ammo:\n\nSet Dev Mode:          [zero]",
           "font": "assets\\gfx\\Bonus\\kenvector_future.ttf",
           "characterSize": 25,
           "color": {
@@ -3496,33 +3516,53 @@
             {
               "type": {
                 "inverted": false,
-                "value": "BuiltinCommonInstructions::And"
+                "value": "BuiltinCommonInstructions::Or"
               },
               "parameters": [],
               "subInstructions": [
                 {
                   "type": {
                     "inverted": false,
-                    "value": "SourisSurObjet"
+                    "value": "KeyReleased"
                   },
                   "parameters": [
-                    "Button",
                     "",
-                    "",
-                    ""
+                    "b"
                   ],
                   "subInstructions": []
                 },
                 {
                   "type": {
                     "inverted": false,
-                    "value": "MouseButtonReleased"
+                    "value": "BuiltinCommonInstructions::And"
                   },
-                  "parameters": [
-                    "",
-                    "Left"
-                  ],
-                  "subInstructions": []
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "Button",
+                        "",
+                        "",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ],
+                      "subInstructions": []
+                    }
+                  ]
                 }
               ]
             }
@@ -8418,6 +8458,25 @@
         {
           "bold": true,
           "italic": false,
+          "name": "Paused",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "behaviors": [],
+          "string": "Paused",
+          "font": "assets\\gfx\\Bonus\\kenvector_future.ttf",
+          "characterSize": 40,
+          "color": {
+            "b": 0,
+            "g": 255,
+            "r": 255
+          }
+        },
+        {
+          "bold": true,
+          "italic": false,
           "name": "GameOver",
           "smoothed": true,
           "tags": "",
@@ -9580,6 +9639,21 @@
         {
           "disabled": false,
           "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Pause",
+          "comment2": ""
+        },
+        {
+          "disabled": false,
+          "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -9606,7 +9680,75 @@
               "subInstructions": []
             }
           ],
-          "events": []
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "Pause",
+                    "True"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "GameOver",
+                    "Paused",
+                    "150",
+                    "400",
+                    "\"UI\""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "Pause",
+                    "False"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Paused",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
         },
         {
           "disabled": false,
