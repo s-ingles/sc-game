@@ -733,6 +733,24 @@
         "name": "assets\\gfx\\PNG\\UI\\buttonYellow2.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "file": "assets/sfx/Audio/explosionCrunch_000.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\Audio\\explosionCrunch_000.ogg",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/sfx/Audio/laserLarge_003.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\Audio\\laserLarge_003.ogg",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -4444,7 +4462,7 @@
         "gridWidth": 16,
         "snap": true,
         "windowMask": false,
-        "zoomFactor": 0.6199999999999999
+        "zoomFactor": 0.6599999999999999
       },
       "objectsGroups": [],
       "variables": [],
@@ -8738,6 +8756,18 @@
                     "value": "ModVarScene"
                   },
                   "parameters": [
+                    "PreviousWave",
+                    "=",
+                    "Variable(EnemyPool)"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
                     "BossesSpawned",
                     "=",
                     "0"
@@ -9836,6 +9866,18 @@
                 {
                   "type": {
                     "inverted": false,
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "SplashText",
+                    "=",
+                    "\"HP+\""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
                     "value": "PlaySoundCanal"
                   },
                   "parameters": [
@@ -9972,7 +10014,7 @@
                   "parameters": [
                     "SplashText",
                     "=",
-                    "\"Special+\""
+                    "\"SP+\""
                   ],
                   "subInstructions": []
                 },
@@ -10864,6 +10906,21 @@
                 ""
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PlaySoundCanal"
+              },
+              "parameters": [
+                "",
+                "assets\\sfx\\Audio\\explosionCrunch_000.ogg",
+                "3",
+                "",
+                "30",
+                "1.25"
+              ],
+              "subInstructions": []
             }
           ],
           "events": []
@@ -11022,6 +11079,21 @@
                 "Enemies.X()",
                 "Enemies.Y()",
                 ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PlaySoundCanal"
+              },
+              "parameters": [
+                "",
+                "assets\\sfx\\Audio\\explosionCrunch_000.ogg",
+                "4",
+                "",
+                "15",
+                "1.2"
               ],
               "subInstructions": []
             }
@@ -11500,6 +11572,21 @@
                 ""
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PlaySoundCanal"
+              },
+              "parameters": [
+                "",
+                "assets\\sfx\\Audio\\explosionCrunch_000.ogg",
+                "3",
+                "",
+                "30",
+                "1.25"
+              ],
+              "subInstructions": []
             }
           ],
           "events": []
@@ -11526,12 +11613,11 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "SetSceneVariableAsBoolean"
               },
               "parameters": [
-                "EnemyPool",
-                "=",
-                "RandomInRange(1,4)"
+                "ShowCD",
+                "True"
               ],
               "subInstructions": []
             },
@@ -11544,28 +11630,6 @@
                 "SpeedOffset",
                 "*",
                 "Variable(SpeedReductionFactor)"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "SetSceneVariableAsBoolean"
-              },
-              "parameters": [
-                "ShowCD",
-                "True"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "SetSceneVariableAsBoolean"
-              },
-              "parameters": [
-                "BossActive",
-                "="
               ],
               "subInstructions": []
             },
@@ -11641,6 +11705,32 @@
                 "Score",
                 "+",
                 "Variable(BossScore)*Variable(BossesSpawned)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PlaySoundCanal"
+              },
+              "parameters": [
+                "",
+                "assets\\sfx\\Audio\\explosionCrunch_000.ogg",
+                "6",
+                "",
+                "90",
+                "0.5"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "Reroll",
+                "True"
               ],
               "subInstructions": []
             }
@@ -11813,7 +11903,7 @@
                       "parameters": [
                         "",
                         "assets\\sfx\\Audio\\explosionCrunch_003.ogg",
-                        "4",
+                        "5",
                         "",
                         "50",
                         "0.75"
@@ -12068,7 +12158,45 @@
                   "subInstructions": []
                 }
               ],
-              "events": []
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "FireBullet::FireBullet::HasJustFired"
+                      },
+                      "parameters": [
+                        "EnemyBoss4",
+                        "FireBullet",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "PlaySoundCanal"
+                      },
+                      "parameters": [
+                        "",
+                        "assets\\sfx\\Audio\\doorOpen_002.ogg",
+                        "6",
+                        "",
+                        "50",
+                        "0.1"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ]
             }
           ]
         },
@@ -12175,7 +12303,45 @@
                   "subInstructions": []
                 }
               ],
-              "events": []
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "FireBullet::FireBullet::HasJustFired"
+                      },
+                      "parameters": [
+                        "EnemyBoss1",
+                        "FireBullet",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "PlaySoundCanal"
+                      },
+                      "parameters": [
+                        "",
+                        "assets\\sfx\\Audio\\laserLarge_003.ogg",
+                        "6",
+                        "",
+                        "50",
+                        "1.5"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ]
             },
             {
               "disabled": false,
@@ -12272,7 +12438,45 @@
                   "subInstructions": []
                 }
               ],
-              "events": []
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "FireBullet::FireBullet::HasJustFired"
+                      },
+                      "parameters": [
+                        "EnemyBoss3",
+                        "FireBullet",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "PlaySoundCanal"
+                      },
+                      "parameters": [
+                        "",
+                        "assets\\sfx\\Audio\\laserLarge_003.ogg",
+                        "6",
+                        "",
+                        "50",
+                        "0.1"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ]
             }
           ]
         },
@@ -12380,6 +12584,151 @@
                 "0",
                 "Variable(Speed)*0.5",
                 ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Reroll Enemies",
+          "comment2": ""
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::And"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "Reroll",
+                    "True"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "PreviousWave",
+                    "=",
+                    "Variable(EnemyPool)"
+                  ],
+                  "subInstructions": []
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "EnemyPool",
+                "=",
+                "RandomInRange(1,4)"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::And"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "Reroll",
+                    "True"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "PreviousWave",
+                    "!=",
+                    "Variable(EnemyPool)"
+                  ],
+                  "subInstructions": []
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "PreviousWave",
+                "=",
+                "Variable(EnemyPool)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "BossActive",
+                "="
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "Reroll",
+                "False"
               ],
               "subInstructions": []
             }
@@ -12596,6 +12945,21 @@
                 ""
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PlaySoundCanal"
+              },
+              "parameters": [
+                "",
+                "assets\\sfx\\Audio\\explosionCrunch_000.ogg",
+                "3",
+                "",
+                "30",
+                "1.25"
+              ],
+              "subInstructions": []
             }
           ],
           "events": []
@@ -12704,12 +13068,10 @@
             {
               "type": {
                 "inverted": false,
-                "value": "Health::Health::Hit"
+                "value": "Delete"
               },
               "parameters": [
                 "AllMeteors",
-                "Health",
-                "200",
                 ""
               ],
               "subInstructions": []
@@ -12736,6 +13098,17 @@
             }
           ],
           "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "AllMeteors",
+                ""
+              ],
+              "subInstructions": []
+            },
             {
               "type": {
                 "inverted": false,
@@ -12781,11 +13154,15 @@
             {
               "type": {
                 "inverted": false,
-                "value": "Delete"
+                "value": "PlaySoundCanal"
               },
               "parameters": [
-                "AllMeteors",
-                ""
+                "",
+                "assets\\sfx\\Audio\\explosionCrunch_000.ogg",
+                "4",
+                "",
+                "15",
+                "1.2"
               ],
               "subInstructions": []
             }
@@ -15291,7 +15668,7 @@
               "parameters": [
                 "SplashText",
                 "=",
-                "\"Special+\""
+                "\"SP+\""
               ],
               "subInstructions": []
             },
@@ -15671,6 +16048,21 @@
                 "Player.X()",
                 "Player.Y()",
                 ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PlaySoundCanal"
+              },
+              "parameters": [
+                "",
+                "assets\\sfx\\Audio\\explosionCrunch_000.ogg",
+                "3",
+                "",
+                "50",
+                "1.25"
               ],
               "subInstructions": []
             }
