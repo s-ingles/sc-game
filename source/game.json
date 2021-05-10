@@ -770,22 +770,22 @@
     {
       "name": "DevMode",
       "type": "string",
-      "value": "-1"
+      "value": "false"
     },
     {
       "name": "Mute",
       "type": "string",
-      "value": "-1"
+      "value": "false"
     },
     {
       "name": "Invincible",
       "type": "string",
-      "value": "-1"
+      "value": "false"
     },
     {
       "name": "RequestURL",
       "type": "string",
-      "value": "https://script.google.com/macros/s/AKfycbxBusOWUTi4HUspCPovtkWqnc1cqVzSB43faYmOFysD8UgkF1wtbLz4zHtTRLnBGdst/exec"
+      "value": "https://script.google.com/macros/s/AKfycbwdiSCYPT_fVaDWf1noORybtpXACLRTIp7CWQIb3MhTTR-7Dj6DrOFvlB1FY1p-R18a/exec"
     },
     {
       "name": "Leaderboard",
