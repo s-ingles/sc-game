@@ -337,6 +337,7 @@ gdjs.copyArray(runtimeScene.getObjects("TopScore"), gdjs.GameLoopCode.GDTopScore
 }{runtimeScene.getVariables().get("BossesSpawned").setNumber(0);
 }{gdjs.evtTools.common.setVariableBoolean(runtimeScene.getVariables().get("DebugStats"), false);
 }{runtimeScene.getVariables().get("DebugTimer").setNumber(0);
+}{gdjs.evtTools.common.setVariableBoolean(runtimeScene.getVariables().get("Cheated"), false);
 }}
 
 }
@@ -984,7 +985,8 @@ gdjs.GameLoopCode.condition0IsTrue_0.val = false;
 {
 gdjs.GameLoopCode.condition0IsTrue_0.val = gdjs.evtTools.input.wasKeyReleased(runtimeScene, "Num1");
 }if (gdjs.GameLoopCode.condition0IsTrue_0.val) {
-{gdjs.evtTools.common.toggleVariableBoolean(runtimeScene.getGame().getVariables().getFromIndex(2));
+{gdjs.evtTools.common.setVariableBoolean(runtimeScene.getVariables().get("Cheated"), true);
+}{gdjs.evtTools.common.toggleVariableBoolean(runtimeScene.getGame().getVariables().getFromIndex(2));
 }
 { //Subevents
 gdjs.GameLoopCode.eventsList10(runtimeScene);} //End of subevents
@@ -1004,7 +1006,8 @@ gdjs.copyArray(gdjs.GameLoopCode.GDPlayerObjects2, gdjs.GameLoopCode.GDPlayerObj
 
 gdjs.GameLoopCode.GDSplashTextObjects3.length = 0;
 
-{runtimeScene.getVariables().get("Score").add(10000);
+{gdjs.evtTools.common.setVariableBoolean(runtimeScene.getVariables().get("Cheated"), true);
+}{runtimeScene.getVariables().get("Score").add(10000);
 }{gdjs.evtTools.object.createObjectOnScene((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : runtimeScene), gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDSplashTextObjects3Objects, (( gdjs.GameLoopCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.GameLoopCode.GDPlayerObjects3[0].getPointX("")), (( gdjs.GameLoopCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.GameLoopCode.GDPlayerObjects3[0].getPointY("")), "");
 }{for(var i = 0, len = gdjs.GameLoopCode.GDSplashTextObjects3.length ;i < len;++i) {
     gdjs.GameLoopCode.GDSplashTextObjects3[i].setColor("0;255;0");
@@ -1029,7 +1032,8 @@ gdjs.copyArray(gdjs.GameLoopCode.GDPlayerObjects2, gdjs.GameLoopCode.GDPlayerObj
 
 gdjs.GameLoopCode.GDSplashTextObjects3.length = 0;
 
-{for(var i = 0, len = gdjs.GameLoopCode.GDPlayerObjects3.length ;i < len;++i) {
+{gdjs.evtTools.common.setVariableBoolean(runtimeScene.getVariables().get("Cheated"), true);
+}{for(var i = 0, len = gdjs.GameLoopCode.GDPlayerObjects3.length ;i < len;++i) {
     gdjs.GameLoopCode.GDPlayerObjects3[i].getBehavior("Health").Heal(200, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }
 }{gdjs.evtTools.object.createObjectOnScene((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : runtimeScene), gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDSplashTextObjects3Objects, (( gdjs.GameLoopCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.GameLoopCode.GDPlayerObjects3[0].getPointX("")), (( gdjs.GameLoopCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.GameLoopCode.GDPlayerObjects3[0].getPointY("")), "");
@@ -1056,7 +1060,8 @@ gdjs.copyArray(runtimeScene.getObjects("EnemyBoss1"), gdjs.GameLoopCode.GDEnemyB
 gdjs.copyArray(runtimeScene.getObjects("EnemyBoss2"), gdjs.GameLoopCode.GDEnemyBoss2Objects3);
 gdjs.copyArray(runtimeScene.getObjects("EnemyBoss3"), gdjs.GameLoopCode.GDEnemyBoss3Objects3);
 gdjs.copyArray(runtimeScene.getObjects("EnemyBoss4"), gdjs.GameLoopCode.GDEnemyBoss4Objects3);
-{for(var i = 0, len = gdjs.GameLoopCode.GDEnemyBoss1Objects3.length ;i < len;++i) {
+{gdjs.evtTools.common.setVariableBoolean(runtimeScene.getVariables().get("Cheated"), true);
+}{for(var i = 0, len = gdjs.GameLoopCode.GDEnemyBoss1Objects3.length ;i < len;++i) {
     gdjs.GameLoopCode.GDEnemyBoss1Objects3[i].getBehavior("Health").SetHealth(0, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }
 for(var i = 0, len = gdjs.GameLoopCode.GDEnemyBoss2Objects3.length ;i < len;++i) {
@@ -1081,7 +1086,8 @@ gdjs.GameLoopCode.condition0IsTrue_0.val = false;
 {
 gdjs.GameLoopCode.condition0IsTrue_0.val = gdjs.evtTools.input.wasKeyReleased(runtimeScene, "Num5");
 }if (gdjs.GameLoopCode.condition0IsTrue_0.val) {
-{gdjs.evtTools.common.toggleVariableBoolean(runtimeScene.getGame().getVariables().getFromIndex(5));
+{gdjs.evtTools.common.setVariableBoolean(runtimeScene.getVariables().get("Cheated"), true);
+}{gdjs.evtTools.common.toggleVariableBoolean(runtimeScene.getGame().getVariables().getFromIndex(5));
 }
 { //Subevents
 gdjs.GameLoopCode.eventsList11(runtimeScene);} //End of subevents
@@ -2370,14 +2376,14 @@ gdjs.copyArray(runtimeScene.getObjects("Combo"), gdjs.GameLoopCode.GDComboObject
 }
 
 
-};gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDBasicExplosionObjects1Objects = Hashtable.newFrom({"BasicExplosion": gdjs.GameLoopCode.GDBasicExplosionObjects1});gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDBasicExplosionSharpObjects1Objects = Hashtable.newFrom({"BasicExplosionSharp": gdjs.GameLoopCode.GDBasicExplosionSharpObjects1});gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDBasicExplosionSmoothObjects1Objects = Hashtable.newFrom({"BasicExplosionSmooth": gdjs.GameLoopCode.GDBasicExplosionSmoothObjects1});gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDGameOverObjects2Objects = Hashtable.newFrom({"GameOver": gdjs.GameLoopCode.GDGameOverObjects2});gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDFinalScoreObjects2Objects = Hashtable.newFrom({"FinalScore": gdjs.GameLoopCode.GDFinalScoreObjects2});gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDInstructObjects2Objects = Hashtable.newFrom({"Instruct": gdjs.GameLoopCode.GDInstructObjects2});gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDDevWarningObjects1Objects = Hashtable.newFrom({"DevWarning": gdjs.GameLoopCode.GDDevWarningObjects1});gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDDevWarningObjects1Objects = Hashtable.newFrom({"DevWarning": gdjs.GameLoopCode.GDDevWarningObjects1});gdjs.GameLoopCode.eventsList42 = function(runtimeScene) {
+};gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDBasicExplosionObjects1Objects = Hashtable.newFrom({"BasicExplosion": gdjs.GameLoopCode.GDBasicExplosionObjects1});gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDBasicExplosionSharpObjects1Objects = Hashtable.newFrom({"BasicExplosionSharp": gdjs.GameLoopCode.GDBasicExplosionSharpObjects1});gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDBasicExplosionSmoothObjects1Objects = Hashtable.newFrom({"BasicExplosionSmooth": gdjs.GameLoopCode.GDBasicExplosionSmoothObjects1});gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDGameOverObjects2Objects = Hashtable.newFrom({"GameOver": gdjs.GameLoopCode.GDGameOverObjects2});gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDFinalScoreObjects2Objects = Hashtable.newFrom({"FinalScore": gdjs.GameLoopCode.GDFinalScoreObjects2});gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDInstructObjects2Objects = Hashtable.newFrom({"Instruct": gdjs.GameLoopCode.GDInstructObjects2});gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDDevWarningObjects1Objects = Hashtable.newFrom({"DevWarning": gdjs.GameLoopCode.GDDevWarningObjects1});gdjs.GameLoopCode.eventsList42 = function(runtimeScene) {
 
 {
 
 
 gdjs.GameLoopCode.condition0IsTrue_0.val = false;
 {
-gdjs.GameLoopCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableBoolean(runtimeScene.getGame().getVariables().getFromIndex(0), false);
+gdjs.GameLoopCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableBoolean(runtimeScene.getVariables().get("Cheated"), false);
 }if (gdjs.GameLoopCode.condition0IsTrue_0.val) {
 gdjs.copyArray(runtimeScene.getObjects("TopScore"), gdjs.GameLoopCode.GDTopScoreObjects2);
 {gdjs.evtTools.network.sendAsyncRequest(gdjs.evtTools.common.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(3)) + "?score=" + gdjs.evtTools.common.getVariableString(runtimeScene.getVariables().get("Score")), "", "GET", "", runtimeScene.getVariables().get("Response"), runtimeScene.getVariables().get("Error"));
@@ -2443,12 +2449,11 @@ gdjs.GameLoopCode.GDInstructObjects2.length = 0;
 
 gdjs.GameLoopCode.condition0IsTrue_0.val = false;
 {
-gdjs.GameLoopCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableBoolean(runtimeScene.getGame().getVariables().getFromIndex(0), true);
+gdjs.GameLoopCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableBoolean(runtimeScene.getVariables().get("Cheated"), true);
 }if (gdjs.GameLoopCode.condition0IsTrue_0.val) {
 gdjs.GameLoopCode.GDDevWarningObjects1.length = 0;
 
-{gdjs.evtTools.object.createObjectOnScene((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : runtimeScene), gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDDevWarningObjects1Objects, 75, 350, "UI");
-}{gdjs.evtTools.object.createObjectOnScene((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : runtimeScene), gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDDevWarningObjects1Objects, 75, 500, "UI");
+{gdjs.evtTools.object.createObjectOnScene((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : runtimeScene), gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDDevWarningObjects1Objects, 40, 500, "UI");
 }}
 
 }

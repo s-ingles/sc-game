@@ -9134,7 +9134,7 @@
           "underlined": false,
           "variables": [],
           "behaviors": [],
-          "string": "Scores are not submitted in Dev Mode",
+          "string": "Scores are not submitted if cheats are used",
           "font": "",
           "characterSize": 20,
           "color": {
@@ -9390,6 +9390,17 @@
                     "DebugTimer",
                     "=",
                     "0"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SetSceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "Cheated",
+                    ""
                   ],
                   "subInstructions": []
                 }
@@ -10979,6 +10990,17 @@
                     {
                       "type": {
                         "inverted": false,
+                        "value": "SetSceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Cheated",
+                        "True"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
                         "value": "ToggleGlobalVariableAsBoolean"
                       },
                       "parameters": [
@@ -11157,6 +11179,17 @@
                     {
                       "type": {
                         "inverted": false,
+                        "value": "SetSceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Cheated",
+                        "True"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
                         "value": "ModVarScene"
                       },
                       "parameters": [
@@ -11239,6 +11272,17 @@
                     }
                   ],
                   "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SetSceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Cheated",
+                        "True"
+                      ],
+                      "subInstructions": []
+                    },
                     {
                       "type": {
                         "inverted": false,
@@ -11328,6 +11372,17 @@
                     {
                       "type": {
                         "inverted": false,
+                        "value": "SetSceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Cheated",
+                        "True"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
                         "value": "Health::Health::SetHealth"
                       },
                       "parameters": [
@@ -11371,6 +11426,17 @@
                     }
                   ],
                   "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SetSceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Cheated",
+                        "True"
+                      ],
+                      "subInstructions": []
+                    },
                     {
                       "type": {
                         "inverted": false,
@@ -18023,11 +18089,11 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "GlobalVariableAsBoolean"
+                    "value": "SceneVariableAsBoolean"
                   },
                   "parameters": [
-                    "DevMode",
-                    ""
+                    "Cheated",
+                    "False"
                   ],
                   "subInstructions": []
                 }
@@ -18217,10 +18283,10 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "GlobalVariableAsBoolean"
+                    "value": "SceneVariableAsBoolean"
                   },
                   "parameters": [
-                    "DevMode",
+                    "Cheated",
                     "True"
                   ],
                   "subInstructions": []
@@ -18235,21 +18301,7 @@
                   "parameters": [
                     "",
                     "DevWarning",
-                    "75",
-                    "350",
-                    "\"UI\""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "DevWarning",
-                    "75",
+                    "40",
                     "500",
                     "\"UI\""
                   ],
