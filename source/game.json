@@ -6633,7 +6633,7 @@
         "gridWidth": 16,
         "snap": true,
         "windowMask": false,
-        "zoomFactor": 0.8119999999999998
+        "zoomFactor": 0.7119999999999997
       },
       "objectsGroups": [
         {
@@ -9284,7 +9284,7 @@
             }
           ],
           "behaviors": [],
-          "string": "(S)pecial: 0",
+          "string": "Special: 0",
           "font": "assets\\gfx\\Bonus\\kenvector_future.ttf",
           "characterSize": 20,
           "color": {
@@ -10567,7 +10567,7 @@
                       "parameters": [
                         "Ammo",
                         "=",
-                        "\"(S)pecial: \"+VariableString(Ammo)"
+                        "\"Special: \"+VariableString(Ammo)"
                       ],
                       "subInstructions": []
                     }
@@ -10742,7 +10742,7 @@
                       "parameters": [
                         "Ammo",
                         "=",
-                        "\"(S)pecial: \"+VariableString(Ammo)"
+                        "\"Special: \"+VariableString(Ammo)"
                       ],
                       "subInstructions": []
                     }
@@ -12156,7 +12156,7 @@
                           "parameters": [
                             "Ammo",
                             "=",
-                            "\"(S)pecial: \"+VariableString(Ammo)"
+                            "\"Special: \"+VariableString(Ammo)"
                           ],
                           "subInstructions": []
                         },
@@ -18265,7 +18265,7 @@
               "parameters": [
                 "Ammo",
                 "=",
-                "\"(S)pecial: \"+VariableString(Ammo)"
+                "\"Special: \"+VariableString(Ammo)"
               ],
               "subInstructions": []
             },

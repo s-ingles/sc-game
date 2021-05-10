@@ -512,7 +512,7 @@ gdjs.GameLoopCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableBoole
 gdjs.copyArray(runtimeScene.getObjects("Ammo"), gdjs.GameLoopCode.GDAmmoObjects1);
 {runtimeScene.getVariables().get("Ammo").sub(1);
 }{for(var i = 0, len = gdjs.GameLoopCode.GDAmmoObjects1.length ;i < len;++i) {
-    gdjs.GameLoopCode.GDAmmoObjects1[i].setString("(S)pecial: " + gdjs.evtTools.common.getVariableString(runtimeScene.getVariables().get("Ammo")));
+    gdjs.GameLoopCode.GDAmmoObjects1[i].setString("Special: " + gdjs.evtTools.common.getVariableString(runtimeScene.getVariables().get("Ammo")));
 }
 }}
 
@@ -556,7 +556,7 @@ gdjs.GameLoopCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableBoole
 gdjs.copyArray(runtimeScene.getObjects("Ammo"), gdjs.GameLoopCode.GDAmmoObjects1);
 {runtimeScene.getVariables().get("Ammo").sub(1);
 }{for(var i = 0, len = gdjs.GameLoopCode.GDAmmoObjects1.length ;i < len;++i) {
-    gdjs.GameLoopCode.GDAmmoObjects1[i].setString("(S)pecial: " + gdjs.evtTools.common.getVariableString(runtimeScene.getVariables().get("Ammo")));
+    gdjs.GameLoopCode.GDAmmoObjects1[i].setString("Special: " + gdjs.evtTools.common.getVariableString(runtimeScene.getVariables().get("Ammo")));
 }
 }}
 
@@ -749,7 +749,7 @@ gdjs.GameLoopCode.GDSplashTextObjects3.length = 0;
 {gdjs.evtTools.sound.playSoundOnChannel(runtimeScene, "assets\\gfx\\Bonus\\sfx_shieldUp.ogg", 2, false, 50, 1);
 }{runtimeScene.getVariables().get("Ammo").setNumber(gdjs.evtTools.common.getVariableNumber(runtimeScene.getVariables().get("SPMaxAmmo")));
 }{for(var i = 0, len = gdjs.GameLoopCode.GDAmmoObjects3.length ;i < len;++i) {
-    gdjs.GameLoopCode.GDAmmoObjects3[i].setString("(S)pecial: " + gdjs.evtTools.common.getVariableString(runtimeScene.getVariables().get("Ammo")));
+    gdjs.GameLoopCode.GDAmmoObjects3[i].setString("Special: " + gdjs.evtTools.common.getVariableString(runtimeScene.getVariables().get("Ammo")));
 }
 }{gdjs.evtTools.object.createObjectOnScene((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : runtimeScene), gdjs.GameLoopCode.mapOfGDgdjs_46GameLoopCode_46GDSplashTextObjects3Objects, (( gdjs.GameLoopCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.GameLoopCode.GDPlayerObjects3[0].getPointX("")), (( gdjs.GameLoopCode.GDPlayerObjects3.length === 0 ) ? 0 :gdjs.GameLoopCode.GDPlayerObjects3[0].getPointY("")), "");
 }{for(var i = 0, len = gdjs.GameLoopCode.GDSplashTextObjects3.length ;i < len;++i) {
@@ -5783,7 +5783,7 @@ gdjs.GameLoopCode.GDSplashTextObjects1.length = 0;
 
 {runtimeScene.getVariables().get("Ammo").setNumber(Math.min(gdjs.evtTools.common.getVariableNumber(runtimeScene.getVariables().get("Ammo")) + 3, gdjs.evtTools.common.getVariableNumber(runtimeScene.getVariables().get("SPMaxAmmo"))));
 }{for(var i = 0, len = gdjs.GameLoopCode.GDAmmoObjects1.length ;i < len;++i) {
-    gdjs.GameLoopCode.GDAmmoObjects1[i].setString("(S)pecial: " + gdjs.evtTools.common.getVariableString(runtimeScene.getVariables().get("Ammo")));
+    gdjs.GameLoopCode.GDAmmoObjects1[i].setString("Special: " + gdjs.evtTools.common.getVariableString(runtimeScene.getVariables().get("Ammo")));
 }
 }{for(var i = 0, len = gdjs.GameLoopCode.GDAmmoUpObjects1.length ;i < len;++i) {
     gdjs.GameLoopCode.GDAmmoUpObjects1[i].deleteFromScene(runtimeScene);
