@@ -6206,7 +6206,7 @@
         "gridWidth": 16,
         "snap": true,
         "windowMask": false,
-        "zoomFactor": 1.0320000000000003
+        "zoomFactor": 0.8720000000000001
       },
       "objectsGroups": [
         {
@@ -6476,8 +6476,8 @@
           "name": "DevOptions",
           "persistentUuid": "a5b1cf0f-9d0d-4c3c-8f55-e5bd4c0d92c1",
           "width": 0,
-          "x": 348,
-          "y": 1,
+          "x": 337,
+          "y": 35,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -6588,8 +6588,8 @@
           "name": "DevStats",
           "persistentUuid": "4480fc74-5994-4d6c-a2b7-2005ab21e60b",
           "width": 0,
-          "x": 6,
-          "y": 36,
+          "x": 10,
+          "y": 35,
           "zOrder": 20,
           "numberProperties": [],
           "stringProperties": [],
@@ -9096,7 +9096,7 @@
           "underlined": false,
           "variables": [],
           "behaviors": [],
-          "string": "Dev Options\n[1] Invincible\n[2] +10,000\n[3] Heal\n[4] Next Boss\n[5] Infinite SP\n[6] Reset\n[7] ToggleStats",
+          "string": "Dev Options\n[1] Invincible\n[2] +10,000\n[3] Heal\n[4] Next Boss\n[5] Infinite SP\n[6] Reset Scene\n[7] ToggleStats",
           "font": "",
           "characterSize": 20,
           "color": {
@@ -9121,6 +9121,25 @@
           "color": {
             "b": 0,
             "g": 255,
+            "r": 255
+          }
+        },
+        {
+          "bold": true,
+          "italic": false,
+          "name": "DevWarning",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "behaviors": [],
+          "string": "Scores are not submitted in Dev Mode",
+          "font": "",
+          "characterSize": 20,
+          "color": {
+            "b": 0,
+            "g": 0,
             "r": 255
           }
         }
@@ -10898,603 +10917,6 @@
                   },
                   "parameters": [
                     "",
-                    "Num1"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ToggleGlobalVariableAsBoolean"
-                  },
-                  "parameters": [
-                    "Invincible"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": [
-                {
-                  "disabled": false,
-                  "folded": false,
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "GlobalVariableAsBoolean"
-                      },
-                      "parameters": [
-                        "Invincible",
-                        "True"
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "Create"
-                      },
-                      "parameters": [
-                        "",
-                        "SplashText",
-                        "Player.X()",
-                        "Player.Y()",
-                        ""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "TextObject::ChangeColor"
-                      },
-                      "parameters": [
-                        "SplashText",
-                        "\"0;255;0\""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "TextObject::String"
-                      },
-                      "parameters": [
-                        "SplashText",
-                        "=",
-                        "\"Invincible On\""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "PlaySoundCanal"
-                      },
-                      "parameters": [
-                        "",
-                        "assets\\gfx\\Bonus\\sfx_shieldUp.ogg",
-                        "2",
-                        "50",
-                        "50",
-                        ""
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "events": []
-                },
-                {
-                  "disabled": false,
-                  "folded": false,
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "GlobalVariableAsBoolean"
-                      },
-                      "parameters": [
-                        "Invincible",
-                        "False"
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "Create"
-                      },
-                      "parameters": [
-                        "",
-                        "SplashText",
-                        "Player.X()",
-                        "Player.Y()",
-                        ""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "TextObject::ChangeColor"
-                      },
-                      "parameters": [
-                        "SplashText",
-                        "\"255;0;0\""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "TextObject::String"
-                      },
-                      "parameters": [
-                        "SplashText",
-                        "=",
-                        "\"Invincible Off\""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "PlaySoundCanal"
-                      },
-                      "parameters": [
-                        "",
-                        "assets\\gfx\\Bonus\\sfx_shieldDown.ogg",
-                        "2",
-                        "50",
-                        "50",
-                        ""
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "events": []
-                }
-              ]
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "KeyReleased"
-                  },
-                  "parameters": [
-                    "",
-                    "Num2"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ModVarScene"
-                  },
-                  "parameters": [
-                    "Score",
-                    "+",
-                    "10000"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "SplashText",
-                    "Player.X()",
-                    "Player.Y()",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "TextObject::ChangeColor"
-                  },
-                  "parameters": [
-                    "SplashText",
-                    "\"255;0;0\""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "TextObject::String"
-                  },
-                  "parameters": [
-                    "SplashText",
-                    "=",
-                    "\"+\"+\"10 000\""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "PlaySoundCanal"
-                  },
-                  "parameters": [
-                    "",
-                    "assets\\sfx\\Audio\\doorOpen_002.ogg",
-                    "2",
-                    "50",
-                    "50",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "KeyReleased"
-                  },
-                  "parameters": [
-                    "",
-                    "Num3"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Health::Health::Heal"
-                  },
-                  "parameters": [
-                    "Player",
-                    "Health",
-                    "200",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "SplashText",
-                    "Player.X()",
-                    "Player.Y()",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "TextObject::ChangeColor"
-                  },
-                  "parameters": [
-                    "SplashText",
-                    "\"255;0;0\""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "TextObject::String"
-                  },
-                  "parameters": [
-                    "SplashText",
-                    "=",
-                    "\"HP+\""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "PlaySoundCanal"
-                  },
-                  "parameters": [
-                    "",
-                    "assets\\gfx\\Bonus\\sfx_shieldUp.ogg",
-                    "2",
-                    "50",
-                    "50",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "KeyReleased"
-                  },
-                  "parameters": [
-                    "",
-                    "Num4"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Health::Health::SetHealth"
-                  },
-                  "parameters": [
-                    "Boss",
-                    "Health",
-                    "0",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ModVarScene"
-                  },
-                  "parameters": [
-                    "SceneTime",
-                    "+",
-                    "3600"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "KeyReleased"
-                  },
-                  "parameters": [
-                    "",
-                    "Num5"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ToggleGlobalVariableAsBoolean"
-                  },
-                  "parameters": [
-                    "InfiniteAmmo"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": [
-                {
-                  "disabled": false,
-                  "folded": false,
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "GlobalVariableAsBoolean"
-                      },
-                      "parameters": [
-                        "InfiniteAmmo",
-                        "True"
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "PlaySoundCanal"
-                      },
-                      "parameters": [
-                        "",
-                        "assets\\gfx\\Bonus\\sfx_shieldUp.ogg",
-                        "2",
-                        "50",
-                        "50",
-                        ""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "ModVarScene"
-                      },
-                      "parameters": [
-                        "Ammo",
-                        "=",
-                        "Variable(SPMaxAmmo)"
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "TextObject::String"
-                      },
-                      "parameters": [
-                        "Ammo",
-                        "=",
-                        "\"(S)pecial: \"+VariableString(Ammo)"
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "Create"
-                      },
-                      "parameters": [
-                        "",
-                        "SplashText",
-                        "Player.X()",
-                        "Player.Y()",
-                        ""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "TextObject::ChangeColor"
-                      },
-                      "parameters": [
-                        "SplashText",
-                        "\"0;255;0\""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "TextObject::String"
-                      },
-                      "parameters": [
-                        "SplashText",
-                        "=",
-                        "\"Infinite On\""
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "events": []
-                },
-                {
-                  "disabled": false,
-                  "folded": false,
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "GlobalVariableAsBoolean"
-                      },
-                      "parameters": [
-                        "InfiniteAmmo",
-                        "False"
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "PlaySoundCanal"
-                      },
-                      "parameters": [
-                        "",
-                        "assets\\gfx\\Bonus\\sfx_shieldDown.ogg",
-                        "2",
-                        "50",
-                        "50",
-                        ""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "Create"
-                      },
-                      "parameters": [
-                        "",
-                        "SplashText",
-                        "Player.X()",
-                        "Player.Y()",
-                        ""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "TextObject::ChangeColor"
-                      },
-                      "parameters": [
-                        "SplashText",
-                        "\"255;0;0\""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "TextObject::String"
-                      },
-                      "parameters": [
-                        "SplashText",
-                        "=",
-                        "\"Infinite Off\""
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "events": []
-                }
-              ]
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "KeyReleased"
-                  },
-                  "parameters": [
-                    "",
                     "Num6"
                   ],
                   "subInstructions": []
@@ -11515,6 +10937,625 @@
                 }
               ],
               "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Health::Health::IsDead"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Health",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "KeyReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Num1"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ToggleGlobalVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Invincible"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "GlobalVariableAsBoolean"
+                          },
+                          "parameters": [
+                            "Invincible",
+                            "True"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "SplashText",
+                            "Player.X()",
+                            "Player.Y()",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "TextObject::ChangeColor"
+                          },
+                          "parameters": [
+                            "SplashText",
+                            "\"0;255;0\""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "TextObject::String"
+                          },
+                          "parameters": [
+                            "SplashText",
+                            "=",
+                            "\"Invincible On\""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "PlaySoundCanal"
+                          },
+                          "parameters": [
+                            "",
+                            "assets\\gfx\\Bonus\\sfx_shieldUp.ogg",
+                            "2",
+                            "50",
+                            "50",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    },
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "GlobalVariableAsBoolean"
+                          },
+                          "parameters": [
+                            "Invincible",
+                            "False"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "SplashText",
+                            "Player.X()",
+                            "Player.Y()",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "TextObject::ChangeColor"
+                          },
+                          "parameters": [
+                            "SplashText",
+                            "\"255;0;0\""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "TextObject::String"
+                          },
+                          "parameters": [
+                            "SplashText",
+                            "=",
+                            "\"Invincible Off\""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "PlaySoundCanal"
+                          },
+                          "parameters": [
+                            "",
+                            "assets\\gfx\\Bonus\\sfx_shieldDown.ogg",
+                            "2",
+                            "50",
+                            "50",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    }
+                  ]
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "KeyReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Num2"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "Score",
+                        "+",
+                        "10000"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "SplashText",
+                        "Player.X()",
+                        "Player.Y()",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::ChangeColor"
+                      },
+                      "parameters": [
+                        "SplashText",
+                        "\"0;255;0\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "SplashText",
+                        "=",
+                        "\"+10 000\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "PlaySoundCanal"
+                      },
+                      "parameters": [
+                        "",
+                        "assets\\sfx\\Audio\\doorOpen_002.ogg",
+                        "2",
+                        "50",
+                        "50",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "KeyReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Num3"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Health::Health::Heal"
+                      },
+                      "parameters": [
+                        "Player",
+                        "Health",
+                        "200",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "SplashText",
+                        "Player.X()",
+                        "Player.Y()",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::ChangeColor"
+                      },
+                      "parameters": [
+                        "SplashText",
+                        "\"0;255;0\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TextObject::String"
+                      },
+                      "parameters": [
+                        "SplashText",
+                        "=",
+                        "\"HP+\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "PlaySoundCanal"
+                      },
+                      "parameters": [
+                        "",
+                        "assets\\gfx\\Bonus\\sfx_shieldUp.ogg",
+                        "2",
+                        "50",
+                        "50",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "KeyReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Num4"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Health::Health::SetHealth"
+                      },
+                      "parameters": [
+                        "Boss",
+                        "Health",
+                        "0",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "SceneTime",
+                        "+",
+                        "3600"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "KeyReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Num5"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ToggleGlobalVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "InfiniteAmmo"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "GlobalVariableAsBoolean"
+                          },
+                          "parameters": [
+                            "InfiniteAmmo",
+                            "True"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "PlaySoundCanal"
+                          },
+                          "parameters": [
+                            "",
+                            "assets\\gfx\\Bonus\\sfx_shieldUp.ogg",
+                            "2",
+                            "50",
+                            "50",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "Ammo",
+                            "=",
+                            "Variable(SPMaxAmmo)"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "TextObject::String"
+                          },
+                          "parameters": [
+                            "Ammo",
+                            "=",
+                            "\"(S)pecial: \"+VariableString(Ammo)"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "SplashText",
+                            "Player.X()",
+                            "Player.Y()",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "TextObject::ChangeColor"
+                          },
+                          "parameters": [
+                            "SplashText",
+                            "\"0;255;0\""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "TextObject::String"
+                          },
+                          "parameters": [
+                            "SplashText",
+                            "=",
+                            "\"Infinite On\""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    },
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "GlobalVariableAsBoolean"
+                          },
+                          "parameters": [
+                            "InfiniteAmmo",
+                            "False"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "PlaySoundCanal"
+                          },
+                          "parameters": [
+                            "",
+                            "assets\\gfx\\Bonus\\sfx_shieldDown.ogg",
+                            "2",
+                            "50",
+                            "50",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "SplashText",
+                            "Player.X()",
+                            "Player.Y()",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "TextObject::ChangeColor"
+                          },
+                          "parameters": [
+                            "SplashText",
+                            "\"255;0;0\""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "TextObject::String"
+                          },
+                          "parameters": [
+                            "SplashText",
+                            "=",
+                            "\"Infinite Off\""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    }
+                  ]
+                }
+              ]
             },
             {
               "disabled": false,
@@ -11721,7 +11762,7 @@
                   "parameters": [
                     "DevStats",
                     "=",
-                    "\"Debug Stats:\"+NewLine()+\"Scene Timer: \"+VariableString(DebugMins)+\" : \"+VariableString(DebugSecs)+NewLine()+\"EnemyCount: \"+VariableString(EnemyCount)+NewLine()+\"MeteorCount: \"+VariableString(MeteorCount)+NewLine()+\"PickupCount: \"+VariableString(PickupCount)+NewLine()+\"ProjectileCount: \"+VariableString(ProjectileCount)+NewLine()+\"FloatingText: \"+VariableString(PopScoreCount)"
+                    "\"Debug Stats:\"+NewLine()+\"SceneTimer: \"+VariableString(DebugMins)+\" : \"+VariableString(DebugSecs)+NewLine()+\"EnemyCount: \"+VariableString(EnemyCount)+NewLine()+\"MeteorCount: \"+VariableString(MeteorCount)+NewLine()+\"PickupCount: \"+VariableString(PickupCount)+NewLine()+\"ProjectileCount: \"+VariableString(ProjectileCount)+NewLine()+\"FloatingText: \"+VariableString(PopScoreCount)"
                   ],
                   "subInstructions": []
                 }
@@ -18026,14 +18067,6 @@
               "folded": false,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
-              "actions": [],
-              "events": []
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
               "actions": [
                 {
                   "type": {
@@ -18072,16 +18105,6 @@
                   },
                   "parameters": [
                     "Combo"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Cache"
-                  },
-                  "parameters": [
-                    "DevOptions"
                   ],
                   "subInstructions": []
                 },
@@ -18180,6 +18203,55 @@
                     "Flash",
                     "3",
                     ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "GlobalVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "DevMode",
+                    "True"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "DevWarning",
+                    "75",
+                    "350",
+                    "\"UI\""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "DevWarning",
+                    "75",
+                    "500",
+                    "\"UI\""
                   ],
                   "subInstructions": []
                 }
